@@ -16,6 +16,7 @@ import spoon.reflect.visitor.filter.TypeFilter;
 public class GetAllCalls extends AbstractProcessor<CtClass> {
 	private Map<CtClass, List<CtInvocation>> map = new HashMap<>();
 	private List<String> classNames = new ArrayList<>();
+	private double invocAppNb;
 
 	@Override
 	public void process(CtClass clazz) {
@@ -27,23 +28,9 @@ public class GetAllCalls extends AbstractProcessor<CtClass> {
 		Set<CtMethod> methods = clazz.getMethods();
 		for (CtMethod method : methods) {
 			listInvocations.addAll(method.getBody().getElements(new TypeFilter(CtInvocation.class)));
-//			for (CtInvocation invoc : listInvocations) {
-//				String methodInvocReceiver = invoc.getExecutable().getReferencedTypes().stream().findFirst().get().toString();
-//				System.out.println("--"+methodInvocReceiver);
-//				if (!methodInvocReceiver.equals(clazz.getSimpleName())
-//						&& classNames.contains(methodInvocReceiver)) {
-//					classInvocNb++;
-//					System.out.println("=="+methodInvocReceiver);
-//				}
-////				System.out.println(invoc.getExecutable().getReferencedTypes().stream().findFirst().get());
-//				
-//			}
-
 		}
+		invocAppNb += listInvocations.size();
 		map.put(clazz, listInvocations);
-//		totalCalls += classInvocNb;
-//		System.out.println(clazz.getSimpleName());
-//		System.out.println(classInvocNb);
 	}
 
 	public Map<CtClass, List<CtInvocation>> getMap() {
@@ -60,6 +47,14 @@ public class GetAllCalls extends AbstractProcessor<CtClass> {
 
 	public void setClassNames(List<String> classNames) {
 		this.classNames = classNames;
+	}
+
+	public double getInvocAppNb() {
+		return invocAppNb;
+	}
+
+	public void setInvocAppNb(double invocAppNb) {
+		this.invocAppNb = invocAppNb;
 	}
 
 
