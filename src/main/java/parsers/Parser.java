@@ -1,4 +1,4 @@
-package Spoon;
+package parsers;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -14,7 +14,6 @@ public abstract class Parser<T> {
 	/* CONSTRUCTOR */
 	public Parser(String projectPath) {
 		setProjectPaths(projectPath);
-		System.out.println("projectPath: "+ projectPath);
 		configure();
 	}
 	
@@ -60,7 +59,7 @@ public abstract class Parser<T> {
 		
 		for (File file: folder.listFiles()) {
 			fileName = file.getName();
-			System.out.println(fileName);
+			
 			if (file.isDirectory())
 				javaFiles.addAll(listJavaFiles(file.getAbsolutePath()));
 			else if (fileName.endsWith(".java"))

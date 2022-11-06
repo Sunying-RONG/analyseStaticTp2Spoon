@@ -1,10 +1,11 @@
-package Spoon;
+package spoonVisitors;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import spoonFilters.FieldsWithGetterFilter;
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.CtCodeSnippetStatement;
 import spoon.reflect.code.CtComment;

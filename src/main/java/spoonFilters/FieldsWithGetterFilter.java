@@ -1,4 +1,4 @@
-package Spoon;
+package spoonFilters;
 
 import java.util.ArrayList;
 import java.util.List;

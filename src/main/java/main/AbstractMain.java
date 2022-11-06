@@ -1,8 +1,10 @@
-package Spoon;
+package main;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+
+import processors.Processor;
 
 public abstract class AbstractMain {
 	public static String TEST_PROJECT_PATH;

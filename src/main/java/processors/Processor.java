@@ -1,4 +1,4 @@
-package Spoon;
+package processors;
 
 public abstract class Processor<T> {
 	/* ATTRIBUTES */

@@ -1,4 +1,7 @@
-package Spoon;
+package spoonProcessors;
+
+import processors.Processor;
+import spoonParsers.SpoonParser;
 
 public class SpoonProcessor extends Processor<SpoonParser> {
 
