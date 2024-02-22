@@ -1,4 +1,6 @@
 # analyseStaticTp2Spoon
+This project is to generate weighted coupling graph using Spoon.  
+
 1. Git clone https://github.com/Sunying-RONG/analyseStaticTp2Spoon.git
 2. In eclipse, import maven project analyseStaticTp2Spoon
 3. Change JRE System Library to version 8
